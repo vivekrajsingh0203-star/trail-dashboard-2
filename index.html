@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSC Bhavya Lite Dashboard: July vs August 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+            <h1>HSC Bhavya Lite Dashboard: July vs August 2025</h1>
+            <p class="header-subtitle">Comprehensive performance comparison across health service centers</p>
+        </header>
+
+        <!-- Summary Cards Section -->
+        <section class="summary-section">
+            <h2>Performance Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="metric-header">
+                        <h3>Active HSC</h3>
+                        <div class="tooltip" data-tooltip="Number of active health service centers">ℹ️</div>
+                    </div>
+                    <div class="metric-values">
+                        <div class="month-value">
+                            <span class="month">July</span>
+                            <span class="value">351</span>
+                        </div>
+                        <div class="month-value">
+                            <span class="month">August</span>
+                            <span class="value">349</span>
+                        </div>
+                    </div>
+                    <div class="change-indicator negative">-0.57%</div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="metric-header">
+                        <h3>Patients Registered</h3>
+                        <div class="tooltip" data-tooltip="Total number of patients registered">ℹ️</div>
+                    </div>
+                    <div class="metric-values">
+                        <div class="month-value">
+                            <span class="month">July</span>
+                            <span class="value">19,020</span>
+                        </div>
+                        <div class="month-value">
+                            <span class="month">August</span>
+                            <span class="value">19,090</span>
+                        </div>
+                    </div>
+                    <div class="change-indicator positive">+0.37%</div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="metric-header">
+                        <h3>Online Prescribed</h3>
+                        <div class="tooltip" data-tooltip="Medications prescribed through online consultations">ℹ️</div>
+                    </div>
+                    <div class="metric-values">
+                        <div class="month-value">
+                            <span class="month">July</span>
+                            <span class="value">9,786</span>
+                        </div>
+                        <div class="month-value">
+                            <span class="month">August</span>
+                            <span class="value">10,927</span>
+                        </div>
+                    </div>
+                    <div class="change-indicator positive">+11.66%</div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="metric-header">
+                        <h3>Provisional Diagnosis</h3>
+                        <div class="tooltip" data-tooltip="Number of provisional diagnoses made">ℹ️</div>
+                    </div>
+                    <div class="metric-values">
+                        <div class="month-value">
+                            <span class="month">July</span>
+                            <span class="value">3,949</span>
+                        </div>
+                        <div class="month-value">
+                            <span class="month">August</span>
+                            <span class="value">4,176</span>
+                        </div>
+                    </div>
+                    <div class="change-indicator positive">+5.75%</div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="metric-header">
+                        <h3>Vital Taken</h3>
+                        <div class="tooltip" data-tooltip="Number of vital measurements recorded">ℹ️</div>
+                    </div>
+                    <div class="metric-values">
+                        <div class="month-value">
+                            <span class="month">July</span>
+                            <span class="value">8,761</span>
+                        </div>
+                        <div class="month-value">
+                            <span class="month">August</span>
+                            <span class="value">11,178</span>
+                        </div>
+                    </div>
+                    <div class="change-indicator positive">+27.59%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chart Section -->
+        <section class="chart-section">
+            <h2>Overall Performance Changes</h2>
+            <div class="chart-container">
+                <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/62be4ccc3d5bc4a97c8b5c27a413e7c2/96e5e7bc-e442-433e-8c6b-66b28a009b28/2c5673b4.png" alt="Overall performance changes across key HSC metrics from July to August 2025" class="chart-image">
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <h2>Block-wise Comparison</h2>
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="search" class="form-label">Search Blocks</label>
+                    <input type="text" id="search" class="form-control" placeholder="Search by block name...">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-metric" class="form-label">Sort by Metric</label>
+                    <select id="sort-metric" class="form-control">
+                        <option value="block">Block Name</option>
+                        <option value="active_hsc_change">Active HSC Change</option>
+                        <option value="patients_change">Patients Change</option>
+                        <option value="online_change">Online Prescribed Change</option>
+                        <option value="diagnosis_change">Diagnosis Change</option>
+                        <option value="vital_change">Vital Taken Change</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="change-filter" class="form-label">Filter by Change</label>
+                    <select id="change-filter" class="form-control">
+                        <option value="all">All Changes</option>
+                        <option value="positive">Positive Changes Only</option>
+                        <option value="negative">Negative Changes Only</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <button id="reset-filters" class="btn btn--secondary">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table Section -->
+        <section class="table-section">
+            <div class="table-container">
+                <table id="comparison-table" class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Block Name</th>
+                            <th colspan="3">Active HSC</th>
+                            <th colspan="3">Patients Registered</th>
+                            <th colspan="3">Online Prescribed</th>
+                            <th colspan="3">Provisional Diagnosis</th>
+                            <th colspan="3">Vital Taken</th>
+                        </tr>
+                        <tr>
+                            <th>July</th>
+                            <th>August</th>
+                            <th>Change</th>
+                            <th>July</th>
+                            <th>August</th>
+                            <th>Change</th>
+                            <th>July</th>
+                            <th>August</th>
+                            <th>Change</th>
+                            <th>July</th>
+                            <th>August</th>
+                            <th>Change</th>
+                            <th>July</th>
+                            <th>August</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Export Section -->
+        <section class="export-section">
+            <h3>Export Data</h3>
+            <div class="export-buttons">
+                <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/62be4ccc3d5bc4a97c8b5c27a413e7c2/9a067dac-013a-46cc-b2ce-6f34e5d0ff43/0e2d7ef6.csv" target="_blank" class="btn btn--outline">Download Comparison Report (CSV)</a>
+                <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/62be4ccc3d5bc4a97c8b5c27a413e7c2/9a067dac-013a-46cc-b2ce-6f34e5d0ff43/6125f2f9.csv" target="_blank" class="btn btn--outline">Download Summary Report (CSV)</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
